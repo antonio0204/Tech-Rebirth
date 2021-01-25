@@ -11,7 +11,7 @@ from flask_pymongo import PyMongo
 from bson import ObjectId
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='pdf')
 app.config['MONGO_URI'] = 'mongodb://localhost/pythonreact'
 mongo = PyMongo(app)
 db = mongo.db.pythonreact
