@@ -6,7 +6,7 @@ Routes:
     /index: display donation button
 
 """
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
 from flask_pymongo import PyMongo
 from bson import ObjectId
 
@@ -24,7 +24,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/index', methods=['POST'])
+@app.route('/index', methods=['POST'], strict_slashes=False)
 def donate():
     """Donate button
     """
@@ -35,7 +35,7 @@ def donate():
     return jsonify(str(ObjectId(id)))
 
 
-@app.route('/index/<id>', methods=['GET'])
+@app.route('/index/<id>', methods=['GET'], strict_slashes=False)
 def getDonates(id):
     """Method to show contributors
     """
@@ -46,6 +46,14 @@ def getDonates(id):
         'name': contributor['name'],
         'amount': contributor['amount']
     })
+
+
+@app.route('/index/download/<name>', strict_slashes=False)
+def downloadFile(name):
+    """Method to download CV
+    """
+    path = name + ".pdf"
+    return send_file(path, as_attachment=True)
 
 
 if __name__ == "__main__":
