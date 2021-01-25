@@ -6,7 +6,7 @@ Routes:
     /index: display donation button
 
 """
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_pymongo import PyMongo
 from bson import ObjectId
 
@@ -48,12 +48,11 @@ def getDonates(id):
     })
 
 
-@app.route('/index/download/<name>', strict_slashes=False)
-def downloadFile(name):
-    """Method to download CV
+@app.route('/pdf/<path:filename>', methods=['GET', 'POST'])
+def download(filename):
+    """Method to download PDF CV.
     """
-    path = name + ".pdf"
-    return send_file(path, as_attachment=True)
+    return send_from_directory(directory='pdf', filename=filename)
 
 
 if __name__ == "__main__":
