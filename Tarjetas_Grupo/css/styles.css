@@ -1,68 +1,28 @@
-*, *:before, *:after {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
 body{
     background: #70e1f5;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+}
 
-    font-family: 'Montserrat', sans-serif;
-    padding: 50px;
+.container1{   
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    flex-direction: column;
-}
-
-.logo {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: red;
-    font-size: 5vw;
-    line-height: 50px;
-    padding: 5px 10px;
-    font-weight: bold;
-    text-shadow: 2px 2px 3px black;
-    text-align: right;
-}
-
-.nav {
-    float: right;
-    line-height: 70px;
-}
-.nav a {
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 2px 1px black;
-    font-size: 30px;
-   
-    display: inline-block;
-    padding: 10px 20px;
-    line-height: normal;
-    font-weight: bold;
-    text-decoration: none;
-}
-.container{   
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    gap: 15px;
+    gap: 10px;
     margin: auto;
     justify-items: center;
     align-items: center;
 }
 
 .card {
-    height: 250px;
-    width: 300px;
+    height: 300px;
+    width: 350px;
     overflow: hidden;
     margin: auto;
     padding: 10px 30px;
     border-radius: 5%;
-    border: 2px solid #fff;
+    border: 5px solid #fff;
     transition: all .4s ease-in-out;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
     text-align: center;
@@ -70,12 +30,23 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
 }
 
 .card:hover{
-    height: 650px;
-    width: 300px;
+    height: 700px;
+    width: 350px;
     border-radius: 5px;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
-
+.card-head img {
+    position: relative;
+    border-radius: 50%;
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-top: 8px solid #fff;
+    border-bottom: 8px solid #fff;
+    object-fit: cover;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
 .card_encabezado img {
     position: relative;
     border-radius: 50%;
@@ -127,11 +98,12 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
 }
 
 .card-iconos li {
+    display: inline;
     border-radius: 50%;
     background-color: #fff;
-    height: 40px;
-    width: 40px;
-    margin: 0 5px;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
     line-height: 40px;
     text-align: center;
     transform: scale(0);
@@ -168,13 +140,12 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
     border-radius: 50%;
     background: #fff;
     display: block;
-    line-height: 40px;
+    line-height: 50px;
     transition: all 0.3s;
 }
 
 .card-iconos img {
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
     width: 20%;
     gap: 15px;
     margin: auto;
@@ -182,7 +153,7 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
 }
 
 .card-iconos li a:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     box-shadow: 0 0 5px #0fb96a;
 }
 
@@ -232,11 +203,10 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     padding: 15px 10px;
     font-size: 16px;
-    width: 80%;
+   /* width: 80%;
     margin: 0 auto;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
     background: linear-gradient(90deg, #7579ff, #b224ef);
 }
 
@@ -253,17 +223,7 @@ background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, F
     text-shadow: 2px 2px 2px black;
 }
 
-footer{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin: 10px;
-    border-radius: 4px;
-    padding: 20px;
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 1px 2px 3px rgb(255, 255, 255);
-}
+
 
 @media screen and (max-width: 600px) {
     .container {
